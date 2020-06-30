@@ -1,0 +1,1 @@
+INSERT INTO public.marca(id, name) VALUES (1, 'Marca 1');
