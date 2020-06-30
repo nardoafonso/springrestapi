@@ -1,7 +1,7 @@
 package com.example.demo.business.application.user;
 
 import com.example.demo.business.commons.UseCase;
-import com.example.demo.business.entity.user.AplicationUserRepository;
+import com.example.demo.business.entity.user.ApplicationUserRepository;
 import lombok.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class UCExcluirUsuario implements UseCase<Void> {
 
     @Autowired
-    private AplicationUserRepository aplicationUserRepository;
+    private ApplicationUserRepository applicationUserRepository;
 
     @Autowired
     private ApplicationUserMapper applicationUserMapper;
@@ -22,7 +22,7 @@ public class UCExcluirUsuario implements UseCase<Void> {
 
     @Override
     public Void execute() {
-        aplicationUserRepository.deleteById(id);
+        applicationUserRepository.deleteById(id);
         return null;
     }
 }

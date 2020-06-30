@@ -4,7 +4,7 @@ import com.example.demo.business.application.user.UCExcluirUsuario;
 import com.example.demo.business.application.user.UCObterUsuario;
 import com.example.demo.business.application.user.UserDto;
 import com.example.demo.business.commons.UseCaseExecutor;
-import com.example.demo.business.entity.user.AplicationUserRepository;
+import com.example.demo.business.entity.user.ApplicationUserRepository;
 import com.example.demo.business.entity.user.ApplicationUser;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
@@ -14,14 +14,14 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     private UseCaseExecutor executor;
-    private AplicationUserRepository aplicationUserRepository;
+    private ApplicationUserRepository applicationUserRepository;
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     public UserController(
-            AplicationUserRepository aplicationUserRepository,
+            ApplicationUserRepository applicationUserRepository,
             BCryptPasswordEncoder bCryptPasswordEncoder,
             UseCaseExecutor executor){
-        this.aplicationUserRepository = aplicationUserRepository;
+        this.applicationUserRepository = applicationUserRepository;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
         this.executor = executor;
     }
@@ -29,7 +29,7 @@ public class UserController {
     @PostMapping
     public void signUp(@RequestBody ApplicationUser user){
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        aplicationUserRepository.save(user);
+        applicationUserRepository.save(user);
     }
 
     @GetMapping(path = "/{id}")
