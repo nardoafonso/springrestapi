@@ -25,7 +25,7 @@ public class MarcaController {
         return executor.execute(new UCObterMarca(id));
     }
 
-    @GetMapping(path = "/{id}/patrimonio")
+    @GetMapping(path = "/{id}/patrimonios")
     public List<PatrimonioDto> getPatrimonioByMarca(@PathVariable Long id){
         return executor.execute(new UCListarPatrimonioPorMarca(id));
     }
