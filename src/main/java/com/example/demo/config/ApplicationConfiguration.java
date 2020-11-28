@@ -9,5 +9,5 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = "com.example.demo.business.entity",
         repositoryBaseClass = EntityRepositoryImpl.class)
-public class ApplicationConfiguration {
+public class ApplicationConfiguration{
 }

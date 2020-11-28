@@ -29,3 +29,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+
+### Angular App ###
+**/src/main/resources/frontend/app/node_modules
